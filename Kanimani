@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Kanimozhi ❤️</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+
+    background: linear-gradient(
+        135deg,
+        #ffdff0,
+        #ffeaf5
+    );
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main card */
+
+.card {
+    width: 92%;
+    max-width: 500px;
+    min-height: 520px;
+
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(8px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 30px;
+
+    box-shadow:
+        0 15px 40px rgba(180, 60, 110, 0.15);
+}
+
+/* Question screen */
+
+#question {
+    width: 100%;
+}
+
+.cat {
+    font-size: 90px;
+
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+h0 {
+    color: #D30000;
+    
+    font-size: 25px;
+}
+
+h1 {
+    color: #c73568;
+
+    font-size: 30px;
+
+    margin: 20px 0 35px;
+}
+
+/* Buttons */
+
+.buttons {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 30px;
+
+    min-height: 80px;
+}
+
+button {
+    border: none;
+
+    cursor: pointer;
+
+    color: white;
+
+    font-weight: bold;
+}
+
+/* YES button */
+
+#yes {
+    background: #48d39b;
+
+    font-size: 27px;
+
+    padding: 18px 55px;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 20px rgba(50, 190, 130, 0.3);
+
+    transition: transform 0.3s;
+}
+
+#yes:hover {
+    transform: scale(1.08);
+}
+
+/* NO button */
+
+#no {
+    background: #f04461;
+
+    font-size: 20px;
+
+    padding: 14px 30px;
+
+    border-radius: 15px;
+
+    transition:
+        transform 0.3s,
+        opacity 0.3s;
+}
+
+/* Hint */
+
+#hint {
+    color: #d04b77;
+
+    margin-top: 25px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+}
+
+
+/* LOVE SCREEN */
+
+#love {
+    display: none;
+
+    padding: 15px;
+}
+
+.bigHeart {
+    font-size: 90px;
+
+    animation: heartBeat 1s infinite;
+}
+
+@keyframes heartBeat {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.25);
+    }
+}
+
+.loveTitle {
+    color: #c73568;
+
+    font-size: 34px;
+
+    line-height: 1.4;
+
+    margin: 15px 0;
+}
+
+.loveText {
+    color: #a52c59;
+
+    font-size: 19px;
+
+    font-weight: bold;
+
+    line-height: 1.7;
+
+    margin-top: 20px;
+}
+
+
+/* Floating hearts */
+
+.heart {
+    position: absolute;
+
+    bottom: -50px;
+
+    pointer-events: none;
+
+    animation:
+        floatHeart 5s linear forwards;
+}
+
+@keyframes floatHeart {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* Mobile */
+
+@media (max-width: 400px) {
+
+    .card {
+        min-height: 500px;
+    }
+
+    .kanimani {
+        font-size: 75px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    #yes {
+        font-size: 24px;
+
+        padding:
+            16px 42px;
+    }
+
+    #no {
+        font-size: 18px;
+
+        padding:
+            12px 25px;
+    }
+
+    .loveTitle {
+        font-size: 29px;
+    }
+
+    .loveText {
+        font-size: 17px;
+    }
+}
+</style>
+</head>
+
+
+<body>
+
+
+<div class="card">
+
+
+    <!-- ===================== -->
+    <!-- QUESTION SCREEN -->
+    <!-- ===================== -->
+
+    <div id="question">
+
+        <div class="kanimani">
+          🫶
+        </div>
+
+        <h0>
+            Kanimozhi
+        </h0>
+        
+<h1>
+            Do you love me? ❤️
+        </h1>
+
+        <div class="buttons">
+
+            <button
+                id="yes"
+                onclick="yesClicked()">
+
+                YES 💕
+
+            </button>
+
+
+            <button
+                id="no"
+                onclick="noClicked()">
+
+                NO
+
+            </button>
+
+        </div>
+
+
+        <div id="hint">
+            Choose carefully 🥰
+        </div>
+
+    </div>
+
+
+
+    <!-- ===================== -->
+    <!-- LOVE SCREEN -->
+    <!-- ===================== -->
+
+    <div id="love">
+
+        <div class="bigHeart">
+            ❤️
+        </div>
+
+
+        <h2 class="loveTitle">
+
+            I LOVE YOU<br>
+
+            KANIMOZHI 🥰❤️
+
+        </h2>
+
+
+        <p class="loveText">
+
+            I never knew one person could make my heart feel this happy. 🥹❤️<br>
+
+            Somehow, you became my favorite part of every day. 🌸💕<br>
+
+            Today, I'm not just asking for a "YES"... I'm asking for a place in your heart. 🫶🏻<br>
+
+            So, Kanimozhi... will you be the beginning of my forever? ❤️🥰
+
+        </p>
+
+
+        <div style="font-size:45px;">
+
+            🥰 💕 ❤️ 🫶🏻 💗
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+
+<script>
+
+
+/* ========================= */
+/* NO BUTTON SETTINGS */
+/* ========================= */
+
+let noSize = 1;
+
+let clickCount = 0;
+
+
+const messages = [
+
+    "Are you sure? 🥺",
+
+    "Think again... 😭",
+
+    "Really? 🥹",
+
+    "Pleaseee 🥺💕",
+
+    "Wrong answer 😭",
+
+    "Try again cutie 🥰",
+
+    "You can't escape 😂❤️",
+
+    "Okay... last chance 😭",
+
+    "Only YES is left now 🥰❤️"
+
+];
+
+
+
+/* ========================= */
+/* NO BUTTON CLICK */
+/* ========================= */
+
+function noClicked() {
+
+    clickCount++;
+
+
+    /*
+       Make NO smaller
+       every time it is clicked
+    */
+
+    noSize = noSize * 0.70;
+
+
+    const noButton =
+        document.getElementById("no");
+
+
+    noButton.style.transform =
+        `scale(${noSize})`;
+
+
+    /*
+       Change the message
+    */
+
+    const hint =
+        document.getElementById("hint");
+
+
+    if (clickCount <= messages.length) {
+
+        hint.innerText =
+            messages[clickCount - 1];
+
+    }
+
+
+    /*
+       Make YES slightly bigger
+    */
+
+    const yesButton =
+        document.getElementById("yes");
+
+
+    let yesScale =
+        1 + (clickCount * 0.04);
+
+
+    yesButton.style.transform =
+        `scale(${yesScale})`;
+
+
+    /*
+       When NO becomes extremely small
+    */
+
+    if (noSize < 0.08) {
+
+        noButton.style.opacity = "0.4";
+
+        hint.innerText =
+            "Okay... YES is your only option now 🥰❤️";
+
+    }
+
+}
+
+
+
+/* ========================= */
+/* YES CLICK */
+/* ========================= */
+
+function yesClicked() {
+
+
+    /*
+       Hide question
+    */
+
+    document.getElementById("question")
+        .style.display = "none";
+
+
+    /*
+       Show love message
+    */
+
+    document.getElementById("love")
+        .style.display = "block";
+
+
+    /*
+       Create floating hearts
+    */
+
+    createHearts();
+
+}
+
+
+
+/* ========================= */
+/* FLOATING HEARTS */
+/* ========================= */
+
+function createHearts() {
+
+
+    const emojis = [
+
+        "❤️",
+        "💕",
+        "💗",
+        "💖",
+        "💘",
+        "🥰",
+        "🫶🏻",
+        "✨"
+
+    ];
+
+
+    for (let i = 0; i < 60; i++) {
+
+
+        let heart =
+            document.createElement("div");
+
+
+        heart.className =
+            "heart";
+
+
+        heart.innerText =
+            emojis[
+                Math.floor(
+                    Math.random() *
+                    emojis.length
+                )
+            ];
+
+
+        heart.style.left =
+            Math.random() * 100 + "vw";
+
+
+        heart.style.fontSize =
+            (18 + Math.random() * 30) + "px";
+
+
+        heart.style.animationDuration =
+            (3 + Math.random() * 4) + "s";
+
+
+        heart.style.animationDelay =
+            Math.random() * 2 + "s";
+
+
+        document.body.appendChild(heart);
+
+
+        setTimeout(() => {
+
+            heart.remove();
+
+        }, 8000);
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
